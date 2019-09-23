@@ -50,9 +50,9 @@ if __name__ == '__main__':
     tornado.options.parse_command_line()
     app = tornado.web.Application([
         (r"/", IndexHandler),
-        (r"/chat", api.chat.ChatHandler),
+        (r"/chat/<user_id>", api.chat.ChatHandler),
         (r"/bot", api.main.BotRequest),
-        (r"/callback/<user_id>", api.callback.CallbackHandler),
+        (r"/callback", api.callback.CallbackHandler),
     ],
         static_path=os.path.join(os.path.dirname(__file__), "static"),
         template_path=os.path.join(os.path.dirname(__file__), "template"),
