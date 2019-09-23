@@ -12,9 +12,9 @@
 </div>
 <script src="{{static_url('js/jquery.min.js')}}"></script>
 <script type="text/javascript">
-        var host = "39.96.21.121"
-        <!--var host = "127.0.0.1"-->
-        var ws = new WebSocket("ws://" + host + ":8000/chat");
+        var host = "39.96.21.121:8646"
+        <!--var host = "127.0.0.1:8000"-->
+        var ws = new WebSocket("ws://" + host + "/chat");
         ws.onmessage = function(e) {
             $("#contents").append("<p>" + e.data + "</p>");
         }
@@ -25,7 +25,7 @@
             $.ajax({
                 contentType: 'application/json',
                 type: 'POST',
-                url: 'http://' + host + ':8000/bot',
+                url: 'http://' + host + '/bot',
                 dataType: 'json',
                 data: JSON.stringify({"user_id": username, "msg": msg}),
                 success: function(data){
@@ -35,7 +35,7 @@
             $("#msg").val("");
 
 
-            <!--$.post("http://" + host + ":8000/bot", {"user_id": username, "msg": msg},-->
+            <!--$.post("http://" + host + "/bot", {"user_id": username, "msg": msg},-->
               <!--function(data){-->
               <!--console.log(data); //  2pm-->
               <!--}, "json");-->
