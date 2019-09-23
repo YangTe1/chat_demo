@@ -1,3 +1,4 @@
+pip
 aiohttp==3.3.2
 aiomysql==0.0.20
 aioredis==1.2.0
