@@ -52,7 +52,7 @@ if __name__ == '__main__':
         (r"/", IndexHandler),
         (r"/chat", api.chat.ChatHandler),
         (r"/bot", api.main.BotRequest),
-        (r"/callback", api.callback.CallbackHandler),
+        (r"/callback/<user_id>", api.callback.CallbackHandler),
     ],
         static_path=os.path.join(os.path.dirname(__file__), "static"),
         template_path=os.path.join(os.path.dirname(__file__), "template"),

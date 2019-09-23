@@ -13,14 +13,14 @@
 <script src="{{static_url('js/jquery.min.js')}}"></script>
 <script type="text/javascript">
         var host = "39.96.21.121:8646"
+        var username = localStorage.getItem("username")
         <!--var host = "127.0.0.1:8000"-->
-        var ws = new WebSocket("ws://" + host + "/chat");
+        var ws = new WebSocket("ws://" + host + "/chat/" + username);
         ws.onmessage = function(e) {
             $("#contents").append("<p>" + e.data + "</p>");
         }
         function sendMsg() {
             var msg = $("#msg").val();
-            var username = localStorage.getItem("username")
 
             $.ajax({
                 contentType: 'application/json',
