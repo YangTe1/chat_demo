@@ -60,7 +60,7 @@ if __name__ == '__main__':
     )
     port = options.port
     enable_tornado_log()
-    logger.info(f'listening on 8000')
+    logger.info(f'listening on {port}')
     logger.info(f"DEBUG is: True")
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(options.port)
