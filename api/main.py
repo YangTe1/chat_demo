@@ -20,7 +20,6 @@ class BotRequest(RequestHandler):
         print(msg_body)
 
         client.create_user(user_id)
-        # resp = client.get_bot_response(user_id, msg_body)
         resp = client.receive_message(user_id, msg_body)
 
         return self.write(resp.to_dict())

@@ -50,7 +50,7 @@ if __name__ == '__main__':
     tornado.options.parse_command_line()
     app = tornado.web.Application([
         (r"/", IndexHandler),
-        (r"/chat/<user_id>", api.chat.ChatHandler),
+        (r"/chat/(?P<user_id>\w+)", api.chat.ChatHandler),
         (r"/bot", api.main.BotRequest),
         (r"/callback", api.callback.CallbackHandler),
     ],
