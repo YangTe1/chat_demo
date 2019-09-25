@@ -20,7 +20,7 @@ class ChatHandler(WebSocketHandler):
         #         u"[%s]-[%s]-进入聊天室" % (self.request.remote_ip, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         self.write_message(
-            u"[%s]-[%s]-进入聊天室" % (user_id, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            u"[%s]-[%s]-欢迎进入会话" % (user_id, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     def on_message(self, message):
         for u in self.users:  # 向在线用户广播消息
@@ -30,7 +30,8 @@ class ChatHandler(WebSocketHandler):
     @classmethod
     async def ai_reply(cls, user_id, message):
         # for u in cls.users:  # 向在线用户广播消息
-        #     u.write_message(u"[%s]-[%s]-说：%s" % (user_id, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
+        #     u.write_message(u"[%s]-[%s]-说：%s" % (
+        #         "AI", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
         for u in cls.users[user_id]:
             u.write_message(u"[%s]-[%s]-说：%s" % (
                 "AI", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))

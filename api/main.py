@@ -2,6 +2,7 @@ import json
 
 from tornado.web import RequestHandler
 from wulaisdk.client import WulaiClient
+# from api.chat import ChatHandler
 
 
 class BotRequest(RequestHandler):
@@ -19,3 +20,5 @@ class BotRequest(RequestHandler):
         resp = client.receive_message(user_id, msg_body)
 
         return self.write(resp.to_dict())
+        # await ChatHandler.ai_reply(user_id, "hhhhhhh")
+        # self.write("success")
