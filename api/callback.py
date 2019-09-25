@@ -18,6 +18,6 @@ class CallbackHandler(RequestHandler):
         logger.warning(f"{user_id}")
         # do sth.
         # websocket服务
-        # await UserSocketHandler.ai_reply(content, user_id)
         await ChatHandler.ai_reply(user_id, content)
+
         self.write("success")
