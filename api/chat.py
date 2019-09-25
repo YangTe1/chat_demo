@@ -33,7 +33,7 @@ class ChatHandler(WebSocketHandler):
         #     u.write_message(u"[%s]-[%s]-说：%s" % (user_id, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
         for u in cls.users[user_id]:
             u.write_message(u"[%s]-[%s]-说：%s" % (
-                user_id, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
+                "AI", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
 
     def on_close(self):
         self.users[self.user_id].remove(self)  # 用户关闭连接后从容器中移除用户

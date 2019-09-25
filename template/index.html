@@ -21,6 +21,7 @@
         }
         function sendMsg() {
             var msg = $("#msg").val();
+            $("#contents").append("<p>" + "[" + username + "]" + msg + "</p>");
 
             $.ajax({
                 contentType: 'application/json',
