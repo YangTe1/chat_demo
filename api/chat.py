@@ -1,4 +1,6 @@
 import datetime
+
+from ast import literal_eval
 from tornado.websocket import WebSocketHandler
 from collections import defaultdict
 
@@ -23,9 +25,13 @@ class ChatHandler(WebSocketHandler):
             u"[%s]-[%s]-欢迎进入会话" % (user_id, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     def on_message(self, message):
-        for u in self.users:  # 向在线用户广播消息
-            u.write_message(u"[%s]-[%s]-说：%s" % (
-                self.request.remote_ip, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
+        msg = literal_eval(message)
+        print(msg)
+        self.write_message(f"AI to {msg['user_id']} - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}说："
+                           f"{msg['data']}")
+        # for u in self.users:  # 向在线用户广播消息
+        #     u.write_message(u"[%s]-[%s]-说：%s" % (
+        #         self.request.remote_ip, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
 
     @classmethod
     async def ai_reply(cls, user_id, message):
