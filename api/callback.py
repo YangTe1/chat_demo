@@ -38,11 +38,11 @@ class CallbackHandler(RequestHandler):
         msg = {"user_id": user_id, "data": content}
         # do sth.
         # websocket服务
-        ws = websocket.WebSocket()
-        ws.connect(f"ws://39.96.21.121:8646/chat/{user_id}")
-        ws.send(f"{msg}")
-        ws.close()
+        # ws = websocket.WebSocket()
+        # ws.connect(f"ws://39.96.21.121:8646/chat/{user_id}")
+        # ws.send(f"{msg}")
+        # ws.close()
         # ws.recv()
-        # await ChatHandler.ai_reply(user_id, content)
+        await ChatHandler.ai_reply(user_id, content)
 
         self.write("success")
