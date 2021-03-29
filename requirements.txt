@@ -55,7 +55,7 @@ pycket==0.3.0
 pycodestyle==2.5.0
 pycparser==2.19
 pyflakes==2.1.1
-Pygments==2.4.0
+Pygments==2.7.4
 pymongo==3.8.0
 PyMySQL==0.9.2
 pyparsing==2.4.2
