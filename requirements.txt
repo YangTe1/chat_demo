@@ -50,7 +50,7 @@ pluggy==0.11.0
 prompt-toolkit==2.0.9
 protobuf==3.9.1
 ptyprocess==0.6.0
-py==1.8.0
+py==1.10.0
 pycket==0.3.0
 pycodestyle==2.5.0
 pycparser==2.19
