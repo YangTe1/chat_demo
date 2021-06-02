@@ -77,7 +77,7 @@ traitlets==4.3.2
 twine==1.14.0
 typing==3.7.4.1
 ua-parser==0.8.0
-urllib3==1.22
+urllib3==1.26.5
 user-agents==1.1.0
 ushlex==0.99.1
 wcwidth==0.1.7
