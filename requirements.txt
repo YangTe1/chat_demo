@@ -48,7 +48,7 @@ Pillow==6.0.0
 pkginfo==1.5.0.1
 pluggy==0.11.0
 prompt-toolkit==2.0.9
-protobuf==3.9.1
+protobuf==3.18.3
 ptyprocess==0.6.0
 py==1.8.0
 pycket==0.3.0
